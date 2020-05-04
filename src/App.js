@@ -5,6 +5,7 @@ import "./App.css";
 
 import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shop/shop";
+import CheckoutPage from "./pages/checkout/checkout-page";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils.js";
 
 import Header from "./components/header/header";
@@ -39,6 +40,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
+        <Route exact path="/checkout" component={CheckoutPage} />
         <Route
           exact
           path="/signin"
