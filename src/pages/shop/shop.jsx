@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import ShopData from "../../crwn-clothing_sct6_local_images/shop.data";
-import CollectionPreview from "../../components/preview-collection/collection-preview";
+import React from "react";
+import { Route } from "react-router-dom";
 
-const ShopPage = () => {
-  const [collections, setCollections] = useState(ShopData);
+import CollectionsOverview from "../../components/collections-overview/collections-overview";
+import CollectionPage from "../collection/collectionpage";
+
+
+const ShopPage = ({ match }) => {
   return (
-    <div className="shop-page">
-      {collections.map(({ id, ...otherCollectionProps }) => (
-        <CollectionPreview key={id} {...otherCollectionProps} />
-      ))}
+    <div className="collection-page">
+      <Route exact path={`${match.path}`} component={CollectionsOverview} />
+      <Route path={`${match.path}/:collectionId`} component={CollectionPage} />
     </div>
   );
 };
