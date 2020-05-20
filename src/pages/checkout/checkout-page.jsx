@@ -2,8 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import CheckoutItem from "../../components/checkout-item/checkout-item";
-import SStripeCheckoutButton from "../../components/stripe-button/stripe-button";
-
 import {
   selectCartItems,
   selectCartItemsTotal,
